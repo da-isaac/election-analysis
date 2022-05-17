@@ -14,11 +14,14 @@ file_to_load = os.path.join("Resources", "election_results.csv")
 # Create a filename variable to a direct or indirect path to the file
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-# 1. Initialize total vote counter
+# Initialize total vote counter
 total_votes = 0
 
-# 2. Intialize candidate list
+# Intialize candidate list
 candidate_options = []
+
+# Declare the empty candidate dictionary
+candidate_votes = {}
 
 # Using the with statement open the file as a text file
 with open(file_to_load) as election_data:
@@ -42,8 +45,30 @@ with open(file_to_load) as election_data:
             # Add it to the list of the candidates
             candidate_options.append(candidate_name)
 
+            # Begin tracking the candidate's vote count
+            candidate_votes[candidate_name] = 0
+
+        # Add a vote to that candidate's count
+        candidate_votes[candidate_name] += 1
+
+# Determine the percentage of votes for each candidate by looping through the counts
+# Iterate through the candidate list
+for candidate_name in candidate_votes:
+
+    # Retrieve vote count of a candidate
+    votes = candidate_votes[candidate_name]
+
+    # Calculate the percentage of votes (doing type conversions as needed)
+    vote_percentage = float(votes) / float(total_votes) * 100
+
+    # Print the candidate name and percentage of votes
+    print(f"{candidate_name}: received {vote_percentage}% of the vote.")
+
 # Print the total votes
 print(total_votes)
 
 # Print the candidate list
 print(candidate_options)
+
+# Print the candidate vote dictionary
+print(candidate_votes)
