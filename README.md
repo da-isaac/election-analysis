@@ -21,7 +21,7 @@ The program will be able to report total votes per candidate and county, and det
     ![Candidate](/Resources/Candidate_Results.PNG)
 
 * Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
-    ![Winner](/Resources/Candidate_Results.PNG)
+    ![Winner](/Resources/Winner_Results.PNG)
 
 
 ## Summary
