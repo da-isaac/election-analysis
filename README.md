@@ -1,5 +1,4 @@
 # Election Analysis
-Creation of algorithm to help calculate election results for congressional, senatorial, and local elections 
 
 ## Overview of Project
 
